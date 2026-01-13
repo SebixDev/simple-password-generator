@@ -6,9 +6,9 @@ document.querySelector("#generate").addEventListener("click", function() {
         function generatePassword(count) {
             var generatedPassword = "";
             var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
-            for (i = 0; i < count; i++) {
+            for (let i = 0; i < count; i++) {
                 var index = zufallszahl(chars.length);
-                generatedPassword += chars [index];
+                generatedPassword += chars[index];
                 
             }
             return generatedPassword;
