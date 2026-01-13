@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Password Generator</h1>
+    <p id="Password">Klick auf Generieren</p>
+    <button id="generate">Generieren</button>
+    </div>
+    <script>
+        document.querySelector("#generate").addEventListener("click", function() {
+            var password = generatePassword(12);
+           document.querySelector("#Password").innerHTML = password;
+        });
+
+        function generatePassword(count) {
+            var generatedPassword = "";
+            var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+            for (i = 0; i < count; i++) {
+                var index = zufallszahl(chars.length);
+                generatedPassword += chars [index];
+                
+            }
+            return generatedPassword;
+        }
+
+        function zufallszahl(max) {
+            return Math.floor(Math.random() * max);
+        }
+    </script>
+
+</body>
+</html>
